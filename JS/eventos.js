@@ -11,31 +11,63 @@ function addParagrafo(conteudo) {
 
 }
 
-function soma(a, b) { return a + b; }
 
 
-function subtrair(a, b) { return a - b }
+let numeroA = prompt("Qual é o primeiro Número?")
+let numeroB = prompt("Qual é o Segundo Número?")
+let operacao = prompt("Qual a operação matemática? Digite +, /, - ou * ?")
+
+function soma(numeroA, numeroB) {
+    
+    console.log(numeroA + numeroB)
+}
 
 
-function multiplicacao(a, b) { return a * b }
+function subtrair(numeroA, numeroB) {
+    
+    console.log(numeroA - numeroB)
+}
 
 
-function divisao(a, b) { return a / b }
+function multiplicacao(numeroA, numeroB) {
+
+    console.log(numeroA * numeroB)
+}
+
+function divisao(numeroA, numeroB) {
+
+    console.log(numeroA / numeroB)
+}
 
 
+switch (operacao) {
+    case "+":
+        soma(numeroA, numeroB)
+        console.log(soma);
+        break;
 
-console.log(soma(1, 10));
+    case "-":
+        subtrair(numeroA, numeroB)
+        break;
 
-console.log(subtrair(10, 1));
+    case "/":
+        divisao(numeroA, numeroB)
 
-console.log(multiplicacao(10, 10));
+        break;
 
-console.log(divisao(100, 10));
+    case "*":
+        multiplicacao(numeroA, numeroB)
+
+        break;
+
+    default:
+        break;
+}
 
 
 console.group('jQuery - Funcionando no Console');
 
-$('#teste').on("click", function (){
+$('#teste').on("click", function () {
 
     console.warn("Oi... esse botão funciona");
 })
@@ -44,8 +76,20 @@ console.groupEnd();
 
 console.group('Evento de Submit');
 
+$("form").on("submit", (event) => {
+    event.preventDefault()
+    dados()
+})
 
-// ?????
+function dados() {
+
+
+    let name = $("#name").val()
+    let age = $("#age").val()
+
+    console.log("Seu nome é: ", name, "e você tem ", age, " anos");
+
+}
 
 
 console.groupEnd();

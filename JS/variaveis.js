@@ -80,3 +80,14 @@ switch (idade) {
         console.log("Você é menor de Idade");
         break;
 }
+
+let listaNomes = ["Rafael","Daiane", "Oliota", "Vitor"]
+
+for (let count = 0; count < listaNomes.length; count++) {
+    console.log("Lista FOR: ", listaNomes[count])
+}
+
+listaNomes.forEach(item => {
+    console.log("Lista forEach: ", item);
+    
+});
